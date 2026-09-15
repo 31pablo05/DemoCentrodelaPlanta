@@ -7,10 +7,10 @@ const whatsappMessage = encodeURIComponent(
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
 
-<section id="contacto" class="border-t border-salvia bg-crema py-24 md:py-32">
+<section id="contacto" class="border-t border-salvia/25 bg-crema py-24 md:py-32">
   <div class="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-10">
     <div class="reveal w-full">
-      <div class="img-placeholder overflow-hidden rounded-sm" style="aspect-ratio: 1 / 1;">
+      <div class="img-placeholder aspect-square overflow-hidden rounded-[32px]">
         <span>MAPA · UBICACIÓN DEL CENTRO</span>
       </div>
     </div>
@@ -33,7 +33,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
         <p class="font-body text-tinta/90">[Horario — placeholder]</p>
       </div>
 
-      <hr class="my-8 border-t border-salvia" />
+      <hr class="my-8 border-t border-salvia/25" />
 
       <a
         href={whatsappHref}
@@ -45,15 +45,15 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
         <span class="mt-1 text-xs font-normal">[Número placeholder — +54 9 XXX XXX-XXXX]</span>
       </a>
 
-      <div class="mt-4 grid grid-cols-3 gap-3">
+      <div class="mt-5 flex gap-3">
         <a
           href="#"
           aria-label="Instagram (placeholder)"
-          class="group flex aspect-square items-center justify-center border border-salvia text-verde transition-colors duration-300 hover:border-verde"
+          class="group flex h-[52px] w-[52px] items-center justify-center rounded-full border border-salvia/40 text-verde transition-colors duration-300 hover:border-verde hover:text-ocre"
         >
           <svg
             viewBox="0 0 24 24"
-            class="h-6 w-6 transition-colors duration-300 group-hover:text-ocre"
+            class="h-5 w-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.4"
@@ -67,11 +67,11 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
         <a
           href="#"
           aria-label="Facebook (placeholder)"
-          class="group flex aspect-square items-center justify-center border border-salvia text-verde transition-colors duration-300 hover:border-verde"
+          class="group flex h-[52px] w-[52px] items-center justify-center rounded-full border border-salvia/40 text-verde transition-colors duration-300 hover:border-verde hover:text-ocre"
         >
           <svg
             viewBox="0 0 24 24"
-            class="h-6 w-6 transition-colors duration-300 group-hover:text-ocre"
+            class="h-5 w-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.4"
@@ -85,11 +85,11 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp (placeholder)"
-          class="group flex aspect-square items-center justify-center border border-salvia text-verde transition-colors duration-300 hover:border-verde"
+          class="group flex h-[52px] w-[52px] items-center justify-center rounded-full border border-salvia/40 text-verde transition-colors duration-300 hover:border-verde hover:text-ocre"
         >
           <svg
             viewBox="0 0 24 24"
-            class="h-6 w-6 transition-colors duration-300 group-hover:text-ocre"
+            class="h-5 w-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.4"

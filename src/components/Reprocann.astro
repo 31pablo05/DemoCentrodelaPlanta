@@ -88,29 +88,20 @@ const steps = [
       renovación.
     </p>
 
-    <div class="reveal mt-16 border border-salvia/30">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        {
-          steps.map((step, index) => (
-            <div
-              class:list={[
-                'p-8 md:p-10',
-                index !== 0 && 'border-t border-salvia/30',
-                index === 1 && 'md:border-t-0',
-                (index === 1 || index === 3) && 'md:border-l md:border-salvia/30'
-              ]}
-            >
-              <div class="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
-                <span class="font-display text-5xl text-ocre md:text-6xl">{step.number}</span>
-                <div>
-                  <h3 class="font-display text-xl text-crema md:text-2xl">{step.title}</h3>
-                  <p class="mt-2 text-sm text-crema/70">{step.description}</p>
-                </div>
+    <div class="reveal mt-16 grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        steps.map((step) => (
+          <div class="rounded-2xl border border-salvia/25 bg-crema/[0.08] p-8 md:p-10">
+            <div class="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+              <span class="font-display text-5xl text-ocre md:text-6xl">{step.number}</span>
+              <div>
+                <h3 class="font-display text-xl text-crema md:text-2xl">{step.title}</h3>
+                <p class="mt-2 text-sm text-crema/70">{step.description}</p>
               </div>
             </div>
-          ))
-        }
-      </div>
+          </div>
+        ))
+      }
     </div>
 
     <div class="mt-16 border-t border-salvia/30 pt-10">
