@@ -1,0 +1,140 @@
+---
+// placeholder: reemplazar por el número real de WhatsApp del centro
+const whatsappNumber = '5490000000000';
+const whatsappMessage = encodeURIComponent(
+  'Hola, quiero consultar sobre la gestión del REPROCANN.'
+);
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+const steps = [
+  {
+    number: '01',
+    title: 'Consulta médica inicial',
+    description:
+      'Historia clínica, estudios previos y motivo de consulta. Se resuelven todas las dudas sobre el marco legal.'
+  },
+  {
+    number: '02',
+    title: 'Evaluación e indicación',
+    description:
+      'El profesional define si corresponde el tratamiento y establece la forma de uso y las dosis iniciales.'
+  },
+  {
+    number: '03',
+    title: 'Carga y gestión del registro',
+    description:
+      'Se carga la solicitud en la plataforma oficial y se hace el seguimiento del trámite hasta la aprobación.'
+  },
+  {
+    number: '04',
+    title: 'Acompañamiento y renovación',
+    description:
+      'Controles de evolución, ajuste de indicación y aviso antes del vencimiento para renovar a tiempo.'
+  }
+];
+---
+
+<section id="reprocann" class="relative overflow-hidden bg-verde py-24 text-crema md:py-32">
+  <svg
+    viewBox="0 0 500 900"
+    class="pointer-events-none absolute text-crema opacity-10"
+    style="right: -60px; top: -80px; height: calc(100% + 160px); width: auto;"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <defs>
+      <g id="reprocann-leaf-cluster" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0,0 C-2.6,-8 -2.6,-18 0,-27 C2.6,-18 2.6,-8 0,0 Z" />
+        <path d="M0,0 C-2.4,-7 -2.4,-16 0,-24 C2.4,-16 2.4,-7 0,0 Z" transform="rotate(24)" />
+        <path d="M0,0 C-2.4,-7 -2.4,-16 0,-24 C2.4,-16 2.4,-7 0,0 Z" transform="rotate(-24)" />
+        <path d="M0,0 C-2,-6 -2,-13 0,-19 C2,-13 2,-6 0,0 Z" transform="rotate(48)" />
+        <path d="M0,0 C-2,-6 -2,-13 0,-19 C2,-13 2,-6 0,0 Z" transform="rotate(-48)" />
+        <path d="M0,0 C-1.6,-5 -1.6,-10 0,-13 C1.6,-10 1.6,-5 0,0 Z" transform="rotate(68)" />
+        <path d="M0,0 C-1.6,-5 -1.6,-10 0,-13 C1.6,-10 1.6,-5 0,0 Z" transform="rotate(-68)" />
+      </g>
+    </defs>
+
+    <path d="M250 860 C245 700 255 560 248 420 C242 300 252 200 248 60" stroke-width="1.2" />
+
+    <use href="#reprocann-leaf-cluster" transform="translate(248,420) scale(3.4) rotate(-8)" />
+    <use href="#reprocann-leaf-cluster" transform="translate(285,560) scale(2.6) rotate(22)" />
+    <use href="#reprocann-leaf-cluster" transform="translate(200,650) scale(2.2) rotate(-30)" />
+    <use href="#reprocann-leaf-cluster" transform="translate(300,300) scale(1.8) rotate(15)" />
+    <use href="#reprocann-leaf-cluster" transform="translate(215,200) scale(1.4) rotate(-20)" />
+
+    <path d="M250 860 C230 875 210 880 185 895" stroke-width="0.9" />
+    <path d="M250 860 C270 875 290 880 315 895" stroke-width="0.9" />
+    <path d="M250 860 C246 878 250 890 252 900" stroke-width="0.9" />
+    <path d="M250 860 C220 868 200 878 170 880" stroke-width="0.9" />
+    <path d="M250 860 C280 868 300 878 330 880" stroke-width="0.9" />
+  </svg>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
+    <div class="flex items-center justify-between">
+      <p class="label-section">Ficha 01 · Procedimiento</p>
+      <p class="label-section">Cuatro pasos</p>
+    </div>
+    <hr class="mt-6 border-t border-salvia/30" />
+
+    <h2 class="mt-10 font-display text-5xl leading-none sm:text-6xl md:text-7xl">
+      <span class="font-semibold uppercase tracking-wide">Reprocann</span>{' '}
+      <span class="italic">paso a paso</span>
+    </h2>
+
+    <p class="mt-6 max-w-xl font-body text-crema/90 md:text-lg">
+      El REPROCANN es el registro oficial que habilita el acceso legal al tratamiento y al
+      cultivo. El centro lo tramita junto al paciente desde la primera consulta hasta la
+      renovación.
+    </p>
+
+    <div class="reveal mt-16 border border-salvia/30">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        {
+          steps.map((step, index) => (
+            <div
+              class:list={[
+                'p-8 md:p-10',
+                index !== 0 && 'border-t border-salvia/30',
+                index === 1 && 'md:border-t-0',
+                (index === 1 || index === 3) && 'md:border-l md:border-salvia/30'
+              ]}
+            >
+              <div class="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+                <span class="font-display text-5xl text-ocre md:text-6xl">{step.number}</span>
+                <div>
+                  <h3 class="font-display text-xl text-crema md:text-2xl">{step.title}</h3>
+                  <p class="mt-2 text-sm text-crema/70">{step.description}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-16 border-t border-salvia/30 pt-10">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+        <p class="text-xs text-crema/60" style="max-width: 60ch;">
+          El uso medicinal del cannabis en Argentina está regulado por la Ley 27.350 y su
+          reglamentación, que crea el Programa Nacional para el Estudio y la Investigación del Uso
+          Medicinal de la Planta de Cannabis; el REPROCANN es el registro dependiente del
+          Ministerio de Salud de la Nación que habilita el cultivo y la tenencia con fines
+          medicinales, siempre con indicación de un profesional matriculado; este centro no
+          comercializa productos: indica, registra y hace el seguimiento clínico del tratamiento.
+        </p>
+
+        <div class="flex md:justify-end">
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-solido w-full text-center md:w-auto"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

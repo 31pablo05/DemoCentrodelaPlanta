@@ -1,0 +1,200 @@
+---
+const links = [
+  { href: '#el-centro', label: 'El Centro' },
+  { href: '#tratamientos', label: 'Tratamientos' },
+  { href: '#reprocann', label: 'REPROCANN' },
+  { href: '#profesionales', label: 'Profesionales' },
+  { href: '#contacto', label: 'Contacto' }
+];
+
+// placeholder: reemplazar por el número real de WhatsApp del centro
+const whatsappNumber = '5490000000000';
+const whatsappMessage = encodeURIComponent(
+  'Hola, quiero solicitar un turno en Centro Médico de la Planta.'
+);
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+---
+
+<nav id="site-nav" class="fixed inset-x-0 top-0 z-50">
+  <div class="nav-inner mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 md:px-10">
+    <a href="#top" class="flex shrink-0 items-center gap-3">
+      <svg
+        viewBox="0 0 40 48"
+        class="h-10 w-auto"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M6 44 V20 A14 14 0 0 1 34 20 V44" />
+        <g stroke-width="0.7">
+          <path d="M20 40 C17.4 32 17.4 22 20 13 C22.6 22 22.6 32 20 40 Z" />
+          <path
+            d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z"
+            transform="rotate(24 20 40)"
+          />
+          <path
+            d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z"
+            transform="rotate(-24 20 40)"
+          />
+          <path
+            d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z"
+            transform="rotate(48 20 40)"
+          />
+          <path
+            d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z"
+            transform="rotate(-48 20 40)"
+          />
+          <path
+            d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z"
+            transform="rotate(68 20 40)"
+          />
+          <path
+            d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z"
+            transform="rotate(-68 20 40)"
+          />
+        </g>
+      </svg>
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-base font-semibold">Centro Médico</span>
+        <span class="-mt-0.5 font-display text-base italic">de la Planta</span>
+      </span>
+    </a>
+
+    <ul class="hidden flex-1 items-center justify-center gap-8 md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="group relative font-body text-sm font-medium">
+              {link.label}
+              <span class="absolute -bottom-1 left-0 h-px w-0 bg-ocre transition-all duration-300 group-hover:w-full" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="hidden shrink-0 md:block">
+      <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn-solido">
+        Pedir turno
+      </a>
+    </div>
+
+    <button
+      id="menu-open"
+      type="button"
+      class="shrink-0 md:hidden"
+      aria-label="Abrir menú"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 hidden flex-col bg-verde px-8 py-10 text-crema" style="z-index: 60;">
+  <div class="flex items-center justify-between">
+    <svg
+      viewBox="0 0 40 48"
+      class="h-10 w-auto"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M6 44 V20 A14 14 0 0 1 34 20 V44" />
+      <g stroke-width="0.7">
+        <path d="M20 40 C17.4 32 17.4 22 20 13 C22.6 22 22.6 32 20 40 Z" />
+        <path d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z" transform="rotate(24 20 40)" />
+        <path d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z" transform="rotate(-24 20 40)" />
+        <path d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z" transform="rotate(48 20 40)" />
+        <path d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z" transform="rotate(-48 20 40)" />
+        <path d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z" transform="rotate(68 20 40)" />
+        <path d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z" transform="rotate(-68 20 40)" />
+      </g>
+    </svg>
+
+    <button id="menu-close" type="button" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <ul class="mt-16 flex flex-1 flex-col items-start gap-8">
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href} class="mobile-link font-display text-3xl">
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="mobile-link btn-solido self-start">
+    Pedir turno
+  </a>
+</div>
+
+<style>
+  #site-nav {
+    @apply bg-transparent transition-all duration-300;
+  }
+
+  #site-nav .nav-inner {
+    @apply text-verde transition-colors duration-300;
+  }
+
+  #site-nav.nav-scrolled {
+    @apply bg-verde shadow-md;
+  }
+
+  #site-nav.nav-scrolled .nav-inner {
+    @apply text-crema;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('site-nav');
+
+  const updateNavState = () => {
+    if (window.scrollY > 80) {
+      nav?.classList.add('nav-scrolled');
+    } else {
+      nav?.classList.remove('nav-scrolled');
+    }
+  };
+
+  updateNavState();
+  window.addEventListener('scroll', updateNavState, { passive: true });
+
+  const menuButton = document.getElementById('menu-open');
+  const closeButton = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu?.querySelectorAll('.mobile-link');
+
+  const openMenu = () => {
+    mobileMenu?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    menuButton?.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeMenu = () => {
+    mobileMenu?.classList.add('hidden');
+    document.body.style.overflow = '';
+    menuButton?.setAttribute('aria-expanded', 'false');
+  };
+
+  menuButton?.addEventListener('click', openMenu);
+  closeButton?.addEventListener('click', closeMenu);
+  mobileLinks?.forEach((link) => link.addEventListener('click', closeMenu));
+</script>

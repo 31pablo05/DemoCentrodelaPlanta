@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Confianza from '../components/Confianza.astro';
+import ElCentro from '../components/ElCentro.astro';
+import Tratamientos from '../components/Tratamientos.astro';
+import Reprocann from '../components/Reprocann.astro';
+import Profesionales from '../components/Profesionales.astro';
+import Faq from '../components/Faq.jsx';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Cannabis Medicinal y REPROCANN en Chubut | Centro Médico de la Planta"
+  description="Centro Médico de la Planta en Chubut: cannabis medicinal con indicación clínica, seguimiento médico y gestión completa del REPROCANN para pacientes de la Patagonia."
+>
+  <Nav />
+  <Hero />
+  <Confianza />
+  <ElCentro />
+  <Tratamientos />
+  <Reprocann />
+  <Profesionales />
+  <Faq client:visible />
+  <Contacto />
+  <Footer />
+</Layout>

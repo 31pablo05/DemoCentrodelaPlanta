@@ -1,0 +1,48 @@
+---
+const items = [
+  {
+    label: 'Tratamiento legal',
+    icon: '<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/>'
+  },
+  {
+    label: 'Médicos matriculados',
+    icon:
+      '<rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="10.5" r="1.8"/><path d="M6.5 16c1-1.6 2.6-2.4 3-2.4s2 0.8 3 2.4M14 9h5M14 12.5h5"/>'
+  },
+  {
+    label: 'Gestión de REPROCANN',
+    icon:
+      '<path d="M4 6a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6Z"/><path d="M8 13h8M8 16h5"/>'
+  },
+  {
+    label: 'Seguimiento continuo',
+    icon: '<path d="M3 12h4l2-6 4 12 2-6h6" stroke-linecap="round" stroke-linejoin="round"/>'
+  }
+];
+---
+
+<section class="bg-verde py-6 md:py-8">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-6 px-6 md:grid-cols-4 md:gap-y-0 md:px-10">
+    {
+      items.map((item, index) => (
+        <div
+          class:list={[
+            'flex items-center gap-3',
+            index !== 0 && 'md:border-l md:border-salvia/30 md:pl-6'
+          ]}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="h-5 w-5 shrink-0 text-salvia"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+            set:html={item.icon}
+          />
+          <span class="font-mono text-xs uppercase tracking-[0.15em] text-crema">{item.label}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,153 @@
+---
+const links = [
+  { href: '#el-centro', label: 'El Centro' },
+  { href: '#tratamientos', label: 'Tratamientos' },
+  { href: '#reprocann', label: 'REPROCANN' },
+  { href: '#profesionales', label: 'Profesionales' },
+  { href: '#contacto', label: 'Contacto' }
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="relative overflow-hidden bg-verde text-crema">
+  <svg
+    viewBox="0 0 300 300"
+    class="pointer-events-none absolute -right-16 -bottom-10 text-crema opacity-10"
+    style="width: 420px; height: 420px;"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1"
+    aria-hidden="true"
+  >
+    <path d="M150 282 V90" />
+    <g stroke-width="0.8">
+      <path d="M150 170 C140 150 140 120 150 90 C160 120 160 150 150 170 Z" />
+      <path
+        d="M150 170 C138 155 132 130 130 105 C144 118 152 140 150 170 Z"
+        transform="rotate(30 150 170)"
+      />
+      <path
+        d="M150 170 C138 155 132 130 130 105 C144 118 152 140 150 170 Z"
+        transform="rotate(-30 150 170)"
+      />
+      <path
+        d="M150 170 C142 158 138 140 138 120 C148 130 152 148 150 170 Z"
+        transform="rotate(58 150 170)"
+      />
+      <path
+        d="M150 170 C142 158 138 140 138 120 C148 130 152 148 150 170 Z"
+        transform="rotate(-58 150 170)"
+      />
+      <path
+        d="M150 170 C144 162 142 150 143 138 C149 145 151 156 150 170 Z"
+        transform="rotate(80 150 170)"
+      />
+      <path
+        d="M150 170 C144 162 142 150 143 138 C149 145 151 156 150 170 Z"
+        transform="rotate(-80 150 170)"
+      />
+    </g>
+  </svg>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-10">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <div>
+        <a href="#top" class="flex items-center gap-3">
+          <svg
+            viewBox="0 0 40 48"
+            class="h-10 w-auto"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 44 V20 A14 14 0 0 1 34 20 V44" />
+            <g stroke-width="0.7">
+              <path d="M20 40 C17.4 32 17.4 22 20 13 C22.6 22 22.6 32 20 40 Z" />
+              <path d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z" transform="rotate(24 20 40)" />
+              <path d="M20 40 C17.6 33 17.6 24 20 16 C22.4 24 22.4 33 20 40 Z" transform="rotate(-24 20 40)" />
+              <path d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z" transform="rotate(48 20 40)" />
+              <path d="M20 40 C18 35 18 28 20 21 C22 28 22 35 20 40 Z" transform="rotate(-48 20 40)" />
+              <path d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z" transform="rotate(68 20 40)" />
+              <path d="M20 40 C18.4 37 18.4 32 20 27 C21.6 32 21.6 37 20 40 Z" transform="rotate(-68 20 40)" />
+            </g>
+          </svg>
+          <span class="flex flex-col leading-none">
+            <span class="font-display text-base font-semibold">Centro Médico</span>
+            <span class="-mt-0.5 font-display text-base italic">de la Planta</span>
+          </span>
+        </a>
+        <p class="mt-6 max-w-xs font-display italic text-crema/80">
+          Un acompañamiento médico con raíces botánicas y presencia humana.
+        </p>
+      </div>
+
+      <div>
+        <p class="label-section">Navegación</p>
+        <ul class="mt-6 flex flex-col gap-3">
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-crema/80 transition-colors hover:text-crema">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="label-section">Contacto</p>
+        <div class="mt-6 flex flex-col gap-2 text-sm text-crema/80">
+          <p>[Dirección placeholder — Av. Ejemplo 1234, Trelew, Chubut]</p>
+          <p>[Teléfono placeholder — +54 9 XXX XXX-XXXX]</p>
+          <p>[Horarios placeholder — Lunes a viernes, 9 a 18 hs]</p>
+        </div>
+
+        <div class="mt-6 flex gap-3">
+          <a
+            href="#"
+            aria-label="Instagram (placeholder)"
+            class="flex h-10 w-10 items-center justify-center border border-salvia/60 transition-colors hover:border-crema"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="16.5" cy="7.5" r="0.6" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Facebook (placeholder)"
+            class="flex h-10 w-10 items-center justify-center border border-salvia/60 transition-colors hover:border-crema"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M14.5 8.5h-2a1.5 1.5 0 0 0-1.5 1.5v2H9v2.5h2V20h2.5v-5.5H15l.5-2.5h-2V10c0-.28.22-.5.5-.5h1.5V8.5Z" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="WhatsApp (placeholder)"
+            class="flex h-10 w-10 items-center justify-center border border-salvia/60 transition-colors hover:border-crema"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M5 19.5 6 16a7.5 7.5 0 1 1 3 2.7L5 19.5Z" />
+              <path d="M9.5 10.2c0 2.4 2 4.4 4.4 4.4" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col gap-4 border-t border-salvia/30 pt-6 text-xs text-crema/70 md:flex-row md:items-center md:justify-between">
+      <p>&copy; {year} Centro Médico de la Planta. Todos los derechos reservados.</p>
+      <a href="https://devcraft.com.ar" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-crema">
+        Desarrollado por DevCraft
+      </a>
+    </div>
+  </div>
+</footer>

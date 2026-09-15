@@ -1,0 +1,180 @@
+---
+// placeholder: reemplazar por el número real de WhatsApp del centro
+const whatsappNumber = '5490000000000';
+const whatsappMessage = encodeURIComponent(
+  'Hola, quiero solicitar un turno en Centro Médico de la Planta.'
+);
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+const features = [
+  {
+    title: 'Indicación fundada',
+    text: 'Evaluación clínica seria antes de cualquier indicación.',
+    icon: 'document'
+  },
+  {
+    title: 'Gestión completa',
+    text: 'Acompañamos todo el trámite del REPROCANN de punta a punta.',
+    icon: 'seal'
+  },
+  {
+    title: 'Seguimiento y renovación',
+    text: 'Controles periódicos y renovación del tratamiento en el tiempo.',
+    icon: 'renew'
+  }
+];
+---
+
+<section id="top" class="relative overflow-hidden py-24 md:flex md:min-h-screen md:items-center md:py-32">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 md:flex-row md:items-center md:gap-12 md:px-10">
+    <div class="reveal order-2 flex flex-col gap-6 md:order-1 md:w-3/5">
+      <p class="font-display text-sm italic text-salvia">
+        Volver a los orígenes sin abandonar la ciencia
+      </p>
+
+      <p class="label-section">Cannabis medicinal · Chubut</p>
+
+      <h1 class="font-display text-4xl font-semibold leading-[1.05] text-verde sm:text-5xl md:text-6xl">
+        Cannabis medicinal con indicación y seguimiento
+      </h1>
+
+      <span class="block bg-ocre" style="width: 60px; height: 2px;" aria-hidden="true"></span>
+
+      <p class="font-body text-base text-tinta/90 md:text-lg" style="max-width: 55ch;">
+        El cannabis medicinal es un tratamiento legal en Argentina. Acompañamos con médicos
+        matriculados, indicación clínica y la gestión completa del REPROCANN.
+      </p>
+
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-solido flex items-center justify-center gap-2"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 19.5 6 16a7.5 7.5 0 1 1 3 2.7L5 19.5Z" />
+            <path d="M9.5 10.2c0 2.4 2 4.4 4.4 4.4" />
+          </svg>
+          Escribinos por WhatsApp
+        </a>
+        <a href="#reprocann" class="btn-contorno flex items-center justify-center">
+          Cómo tramitar el REPROCANN
+        </a>
+      </div>
+
+      <hr class="border-t border-salvia/40" />
+
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+        {
+          features.map((feature) => (
+            <div>
+              {feature.icon === 'document' && (
+                <svg
+                  viewBox="0 0 24 24"
+                  class="h-6 w-6 text-ocre"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  aria-hidden="true"
+                >
+                  <path d="M7 3h7l4 4v14H7z" />
+                  <path d="M9.5 13l2 2 4-4" />
+                </svg>
+              )}
+              {feature.icon === 'seal' && (
+                <svg
+                  viewBox="0 0 24 24"
+                  class="h-6 w-6 text-ocre"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="9" r="5" />
+                  <path d="M9 13.5 7.5 20l4.5-2.5 4.5 2.5-1.5-6.5" />
+                </svg>
+              )}
+              {feature.icon === 'renew' && (
+                <svg
+                  viewBox="0 0 24 24"
+                  class="h-6 w-6 text-ocre"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8" />
+                  <path d="M17 4v3h-3M7 20v-3h3" />
+                </svg>
+              )}
+              <h3 class="mt-3 font-display text-lg text-verde">{feature.title}</h3>
+              <p class="mt-1 text-sm text-tinta/80">{feature.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="reveal order-1 flex flex-col items-center gap-6 md:order-2 md:w-2/5">
+      <div class="relative w-full max-w-xs">
+        <svg
+          viewBox="0 0 260 440"
+          class="pointer-events-none absolute -left-20 -bottom-16 text-ocre opacity-20"
+          style="width: 260px; height: auto;"
+          fill="none"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <defs>
+            <g id="hero-leaf-cluster" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0,0 C-2.6,-8 -2.6,-18 0,-27 C2.6,-18 2.6,-8 0,0 Z" />
+              <path d="M0,0 C-2.4,-7 -2.4,-16 0,-24 C2.4,-16 2.4,-7 0,0 Z" transform="rotate(24)" />
+              <path d="M0,0 C-2.4,-7 -2.4,-16 0,-24 C2.4,-16 2.4,-7 0,0 Z" transform="rotate(-24)" />
+              <path d="M0,0 C-2,-6 -2,-13 0,-19 C2,-13 2,-6 0,0 Z" transform="rotate(48)" />
+              <path d="M0,0 C-2,-6 -2,-13 0,-19 C2,-13 2,-6 0,0 Z" transform="rotate(-48)" />
+              <path d="M0,0 C-1.6,-5 -1.6,-10 0,-13 C1.6,-10 1.6,-5 0,0 Z" transform="rotate(68)" />
+              <path d="M0,0 C-1.6,-5 -1.6,-10 0,-13 C1.6,-10 1.6,-5 0,0 Z" transform="rotate(-68)" />
+            </g>
+          </defs>
+
+          <path
+            d="M130 380 C126 300 134 220 128 150 C124 110 132 80 128 40"
+            stroke-width="1"
+          />
+          <use href="#hero-leaf-cluster" transform="translate(128,150) scale(3.2) rotate(-6)" />
+          <use href="#hero-leaf-cluster" transform="translate(150,235) scale(2) rotate(30)" />
+          <use href="#hero-leaf-cluster" transform="translate(92,300) scale(1.5) rotate(-35)" />
+
+          <path d="M130 380 C120 392 108 396 96 408" stroke-width="0.8" />
+          <path d="M130 380 C140 392 152 396 164 408" stroke-width="0.8" />
+          <path d="M130 380 C132 396 130 408 128 420" stroke-width="0.8" />
+        </svg>
+
+        <div class="relative z-10">
+          <div
+            class="img-placeholder border-x border-t border-b-0"
+            style="aspect-ratio: 2 / 1; border-radius: 50% 50% 0 0;"
+          ></div>
+          <div
+            class="img-placeholder -mt-px border-x border-b border-t-0"
+            style="aspect-ratio: 3 / 4;"
+          >
+            <span>LÁMINA BOTÁNICA · CANNABIS SATIVA · HOJA, FLOR Y RAÍZ</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="relative z-10 font-display text-sm italic text-salvia">Cannabis sativa L.</p>
+    </div>
+  </div>
+</section>
