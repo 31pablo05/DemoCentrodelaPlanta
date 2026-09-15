@@ -6,80 +6,181 @@ const whatsappMessage = encodeURIComponent(
 );
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-const benefits = [
-  'Atención profesional y personalizada',
-  'Respaldo científico y legal',
-  'Acompañamiento para pacientes y ONG',
-  'Salud integrativa para una mejor calidad de vida'
+const features = [
+  {
+    title: 'Atención profesional y personalizada',
+    icon: 'user'
+  },
+  {
+    title: 'Respaldo científico y legal',
+    icon: 'shield'
+  },
+  {
+    title: 'Gestión completa del REPROCANN',
+    icon: 'check'
+  },
+  {
+    title: 'Seguimiento clínico del tratamiento',
+    icon: 'clock'
+  }
 ];
 ---
 
-<section id="top" class="relative overflow-hidden bg-crema">
-  <!-- Textura de fondo sutil -->
-  <div 
-    class="pointer-events-none absolute inset-0 opacity-[0.015]"
-    style="background-image: repeating-linear-gradient(45deg, #1A1A17 0, #1A1A17 1px, transparent 1px, transparent 8px);"
-    aria-hidden="true"
-  ></div>
+<section id="top" class="relative min-h-screen w-full overflow-hidden bg-crema">
+  <!-- Capa 1: Fotografía a sangre -->
+  <div class="absolute inset-0">
+    <picture>
+      <source
+        media="(min-width: 768px)"
+        srcset="/imagenes/heros/hero1.png"
+      />
+      <img
+        src="/imagenes/heros/hero2.png"
+        alt="Cannabis medicinal - Centro Médico de la Planta"
+        class="h-full w-full object-cover"
+        style="object-position: center center;"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  </div>
 
-  <!-- Forma orgánica decorativa de fondo -->
-  <div 
-    class="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-[0.025]"
-    style="background: radial-gradient(ellipse at 65% 45%, #7E9C86 0%, transparent 55%);"
-    aria-hidden="true"
-  ></div>
+  <!-- Capa 2: Degradado de fusión -->
+  <div class="absolute inset-0 bg-gradient-to-r from-crema from-30% via-crema/95 via-45% to-transparent to-65% md:bg-gradient-to-r md:from-crema md:from-30% md:via-crema/95 md:via-45% md:to-transparent md:to-65%"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-crema/40 via-transparent to-transparent md:from-crema/30"></div>
 
-  <div class="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-8 px-6 py-20 md:min-h-[85vh] md:grid-cols-[42fr_58fr] md:gap-12 md:px-10 lg:gap-16 lg:px-12 xl:px-16">
+  <!-- Capa 3: Rama botánica del borde izquierdo (solo desktop) -->
+  <svg
+    viewBox="0 0 120 800"
+    class="pointer-events-none absolute -left-8 top-0 hidden h-full w-auto text-salvia opacity-15 md:block"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="0.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <!-- Rama principal -->
+    <path d="M60 0 Q55 200 60 400 Q65 600 60 800" />
     
-    <!-- Columna izquierda: Contenido textual -->
-    <div class="reveal flex flex-col gap-7 md:py-12 lg:gap-8">
+    <!-- Hojas distribuidas -->
+    <g>
+      <!-- Hoja superior -->
+      <path d="M60 120 C50 105 50 85 60 65 C70 85 70 105 60 120 Z" />
+      <path d="M60 120 C52 108 52 92 60 75 C68 92 68 108 60 120 Z" transform="rotate(25 60 97)" />
+      <path d="M60 120 C52 108 52 92 60 75 C68 92 68 108 60 120 Z" transform="rotate(-25 60 97)" />
       
-      <!-- Eyebrow -->
-      <div class="flex items-center gap-2.5">
-        <span class="h-1.5 w-1.5 rounded-full bg-verde" aria-hidden="true"></span>
-        <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-verde/80">
-          Cannabis medicinal · Chubut
-        </p>
-      </div>
+      <!-- Hoja media-alta -->
+      <path d="M60 280 C48 260 48 235 60 210 C72 235 72 260 60 280 Z" />
+      <path d="M60 280 C51 263 51 243 60 220 C69 243 69 263 60 280 Z" transform="rotate(22 60 250)" />
+      <path d="M60 280 C51 263 51 243 60 220 C69 243 69 263 60 280 Z" transform="rotate(-22 60 250)" />
+      <path d="M60 280 C54 268 54 252 60 235 C66 252 66 268 60 280 Z" transform="rotate(45 60 257)" />
+      <path d="M60 280 C54 268 54 252 60 235 C66 252 66 268 60 280 Z" transform="rotate(-45 60 257)" />
+      
+      <!-- Hoja central -->
+      <path d="M60 450 C47 428 47 400 60 370 C73 400 73 428 60 450 Z" />
+      <path d="M60 450 C50 432 50 408 60 380 C70 408 70 432 60 450 Z" transform="rotate(20 60 415)" />
+      <path d="M60 450 C50 432 50 408 60 380 C70 408 70 432 60 450 Z" transform="rotate(-20 60 415)" />
+      <path d="M60 450 C53 436 53 416 60 390 C67 416 67 436 60 450 Z" transform="rotate(40 60 420)" />
+      <path d="M60 450 C53 436 53 416 60 390 C67 416 67 436 60 450 Z" transform="rotate(-40 60 420)" />
+      <path d="M60 450 C55 440 55 424 60 405 C65 424 65 440 60 450 Z" transform="rotate(58 60 427)" />
+      <path d="M60 450 C55 440 55 424 60 405 C65 424 65 440 60 450 Z" transform="rotate(-58 60 427)" />
+      
+      <!-- Hoja inferior -->
+      <path d="M60 620 C50 603 50 580 60 555 C70 580 70 603 60 620 Z" />
+      <path d="M60 620 C53 607 53 588 60 565 C67 588 67 607 60 620 Z" transform="rotate(24 60 592)" />
+      <path d="M60 620 C53 607 53 588 60 565 C67 588 67 607 60 620 Z" transform="rotate(-24 60 592)" />
+    </g>
+  </svg>
 
-      <!-- Frase conceptual -->
-      <p class="font-mono text-sm italic text-salvia">
+  <!-- Capa 4: Elementos gráficos sobre la foto (solo desktop) -->
+  <div class="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
+    <!-- Frase vertical centrada -->
+    <div class="absolute left-1/2 top-24 -translate-x-1/2 text-center font-mono text-[11px] font-medium uppercase tracking-[0.35em] text-crema/90">
+      <div>Salud</div>
+      <div class="mt-2">con raíces</div>
+      <div class="mt-2">en un futuro</div>
+      <div class="mt-2">mejor</div>
+      <div class="mx-auto mt-3 h-px w-8 bg-crema/60"></div>
+    </div>
+
+    <!-- Estructura molecular CBD -->
+    <svg
+      viewBox="0 0 180 140"
+      class="absolute right-[28%] top-[38%] w-44 text-crema opacity-40"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.2"
+    >
+      <!-- Hexágono 1 -->
+      <path d="M40 70 L60 58 L80 70 L80 94 L60 106 L40 94 Z" />
+      <!-- Hexágono 2 -->
+      <path d="M80 70 L100 58 L120 70 L120 94 L100 106 L80 94 Z" />
+      <!-- OH superior -->
+      <line x1="100" y1="58" x2="100" y2="38" />
+      <circle cx="100" cy="38" r="2" fill="currentColor" />
+      <text x="95" y="33" font-size="9" fill="currentColor" class="font-mono">OH</text>
+      <!-- Cadena lateral -->
+      <line x1="120" y1="82" x2="145" y2="82" />
+      <line x1="145" y1="82" x2="155" y2="95" />
+      <text x="148" y="108" font-size="8" fill="currentColor" class="font-mono">C₅H₁₁</text>
+      <!-- CH3 -->
+      <line x1="40" y1="82" x2="25" y2="82" />
+      <text x="12" y="86" font-size="8" fill="currentColor" class="font-mono">CH₃</text>
+    </svg>
+
+    <!-- Lista cannabinoides -->
+    <div class="absolute right-[12%] top-[35%] text-right font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-crema/85">
+      <div>CBD</div>
+      <div class="mt-1.5">THC</div>
+      <div class="mt-1.5">CBG</div>
+      <div class="mt-1.5">CBN</div>
+      <div class="ml-auto mt-2 h-px w-10 bg-crema/50"></div>
+    </div>
+
+    <!-- Lista valores -->
+    <div class="absolute bottom-32 right-[12%] text-right font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-crema/85">
+      <div>Medicina</div>
+      <div class="mt-1.5">Naturaleza</div>
+      <div class="mt-1.5">Ciencia</div>
+      <div class="mt-1.5">Personas</div>
+    </div>
+  </div>
+
+  <!-- Capa 5: Contenido principal -->
+  <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 md:px-10 lg:px-12">
+    <div class="w-full max-w-2xl md:max-w-xl lg:max-w-2xl">
+      <!-- Frase de marca -->
+      <p class="font-display text-sm italic text-salvia md:text-base">
         Volver a los orígenes sin abandonar la ciencia
       </p>
 
-      <!-- Título principal -->
-      <h1 class="font-display text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-verde sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem]">
+      <!-- Etiqueta -->
+      <p class="mt-3 font-mono text-[10px] font-medium uppercase tracking-[0.25em] text-verde/70">
+        Cannabis medicinal · Chubut
+      </p>
+
+      <!-- Titular -->
+      <h1 class="mt-6 font-display text-[2.5rem] font-semibold leading-[0.95] tracking-tight text-verde sm:text-5xl md:text-6xl lg:text-[4.25rem]">
         Cannabis medicinal con indicación y seguimiento
       </h1>
 
-      <!-- Divisor decorativo -->
-      <div class="flex items-center gap-3">
-        <span class="block h-[1.5px] w-16 bg-ocre/80" aria-hidden="true"></span>
-        <svg 
-          viewBox="0 0 16 16" 
-          class="h-3.5 w-3.5 text-ocre/70"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <circle cx="8" cy="8" r="1.5" />
-          <circle cx="3" cy="8" r="1" />
-          <circle cx="13" cy="8" r="1" />
-        </svg>
-      </div>
+      <!-- Trazo -->
+      <div class="mt-6 h-[2px] w-16 bg-ocre"></div>
 
-      <!-- Descripción -->
-      <p class="max-w-[520px] text-base leading-relaxed text-tinta/85 md:text-lg md:leading-relaxed">
+      <!-- Párrafo -->
+      <p class="mt-6 max-w-lg text-base leading-relaxed text-tinta/85 md:text-lg">
         El cannabis medicinal es un tratamiento legal en Argentina. Acompañamos con médicos
         matriculados, indicación clínica y la gestión completa del REPROCANN.
       </p>
 
-      <!-- CTAs -->
-      <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+      <!-- Botones -->
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          class="group inline-flex items-center justify-center gap-2.5 rounded-lg bg-ocre px-7 py-4 font-body text-[15px] font-medium text-blanco shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-verde hover:shadow-md"
+          class="inline-flex items-center justify-center gap-2.5 rounded-lg bg-ocre px-7 py-4 font-body text-[15px] font-medium text-blanco shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-verde hover:shadow-md"
         >
           <svg
             viewBox="0 0 24 24"
@@ -96,9 +197,9 @@ const benefits = [
           </svg>
           Escribinos por WhatsApp
         </a>
-        <a 
-          href="#reprocann" 
-          class="group inline-flex items-center justify-center gap-2 rounded-lg border-[1.5px] border-verde/40 bg-transparent px-7 py-4 font-body text-[15px] font-medium text-verde transition-all duration-300 hover:border-verde hover:bg-verde/5"
+        <a
+          href="#reprocann"
+          class="inline-flex items-center justify-center gap-2 rounded-lg border-[1.5px] border-verde/40 bg-crema/80 px-7 py-4 font-body text-[15px] font-medium text-verde backdrop-blur-sm transition-all duration-300 hover:border-verde hover:bg-crema"
         >
           Cómo tramitar el REPROCANN
           <svg
@@ -116,125 +217,77 @@ const benefits = [
         </a>
       </div>
 
-      <!-- Beneficios livianos -->
-      <div class="mt-6 grid grid-cols-1 gap-3 border-t border-salvia/20 pt-7 sm:grid-cols-2 md:gap-x-6 md:gap-y-3">
-        {benefits.map((benefit) => (
-          <div class="flex items-start gap-2.5">
-            <svg
-              viewBox="0 0 16 16"
-              class="mt-0.5 h-4 w-4 shrink-0 text-verde"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M3 8l3 3 7-7" />
-            </svg>
-            <p class="text-[13px] leading-relaxed text-tinta/75">{benefit}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Columna derecha: Imagen protagonista -->
-    <div class="reveal relative md:py-8 lg:py-12">
-      
-      <!-- Forma orgánica de fondo grande -->
-      <div 
-        class="pointer-events-none absolute -right-6 top-1/2 h-[85%] w-[92%] -translate-y-1/2 opacity-[0.08]"
-        style="background: linear-gradient(165deg, #E8DCC8 0%, #D4C5B0 100%); border-radius: 48% 52% 45% 55% / 52% 48% 52% 48%;"
-        aria-hidden="true"
-      ></div>
-
-      <!-- Ilustración botánica decorativa minimalista -->
-      <svg
-        viewBox="0 0 120 200"
-        class="pointer-events-none absolute -left-4 top-8 text-verde opacity-[0.06] md:-left-6 lg:-left-8"
-        style="width: min(100px, 18%); height: auto;"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="0.8"
-        stroke-linecap="round"
-        aria-hidden="true"
-      >
-        <path d="M60 180 V40" />
-        <path d="M60 100 C50 85 50 70 60 55 C70 70 70 85 60 100 Z" />
-        <path d="M60 130 C52 118 52 105 60 90 C68 105 68 118 60 130 Z" transform="rotate(25 60 110)" />
-        <path d="M60 130 C52 118 52 105 60 90 C68 105 68 118 60 130 Z" transform="rotate(-25 60 110)" />
-      </svg>
-
-      <!-- Contenedor de imagen editorial -->
-      <div class="relative z-10">
-        
-        <!-- Microcopy editorial decorativo superior -->
-        <div class="absolute -top-4 left-4 z-20 flex items-center gap-2 md:-top-5 md:left-5">
-          <span class="rounded-full bg-verde/95 px-3 py-1.5 font-mono text-[10px] font-medium uppercase tracking-widest text-crema shadow-sm">
-            Medicinal
-          </span>
-        </div>
-
-        <!-- Imagen principal grande -->
-        <div
-          class="relative overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(30,58,43,0.12)]"
-          style="aspect-ratio: 4 / 5;"
-        >
-          <img
-            src="/imagenes/heros/cannabis-medicinal-tecsalud-2.jpg"
-            alt="Planta de Cannabis sativa con las estructuras químicas de CBD y THC representando el respaldo científico del tratamiento medicinal"
-            class="absolute inset-0 h-full w-full object-cover"
-            style="object-position: center 35%;"
-            width="900"
-            height="573"
-            fetchpriority="high"
-            decoding="async"
-          />
-          
-          <!-- Overlay muy sutil para mejorar composición -->
-          <div class="absolute inset-0 bg-gradient-to-t from-verde/15 via-transparent to-transparent"></div>
-        </div>
-
-        <!-- Placa editorial inferior -->
-        <div class="absolute bottom-5 left-5 right-5 z-20 rounded-2xl border border-salvia/20 bg-crema/98 px-5 py-3.5 shadow-lg backdrop-blur-sm md:bottom-6 md:left-6 md:right-auto md:max-w-[280px]">
-          <p class="font-display text-sm italic leading-snug text-verde">
-            Cannabis sativa L.
-          </p>
-          <div class="mt-1.5 flex items-center gap-2">
-            <span class="h-px w-8 bg-salvia/40" aria-hidden="true"></span>
-            <p class="font-mono text-[10px] uppercase tracking-wider text-tinta/60">
-              Respaldo científico
-            </p>
-          </div>
-        </div>
-
-        <!-- Elemento decorativo botánico circular -->
-        <div class="absolute -bottom-4 -right-4 z-20 flex h-20 w-20 items-center justify-center rounded-full bg-ocre shadow-xl md:-bottom-5 md:-right-5 md:h-24 md:w-24">
-          <svg
-            viewBox="0 0 24 24"
-            class="h-9 w-9 text-blanco md:h-10 md:w-10"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M12 3C7.5 3 4 6.5 4 11c0 3.5 2 6.5 5 8v2h6v-2c3-1.5 5-4.5 5-8 0-4.5-3.5-8-8-8Z" />
-            <path d="M12 11v10" />
-          </svg>
-        </div>
+      <!-- Cuatro conceptos -->
+      <div class="mt-12 grid grid-cols-2 gap-6 border-t border-salvia/25 pt-10 md:grid-cols-4 md:divide-x md:divide-salvia/25">
+        {
+          features.map((feature) => (
+            <div class="flex flex-col items-start md:px-4 md:first:pl-0">
+              <div class="mb-3 flex h-8 w-8 items-center justify-center">
+                {feature.icon === 'user' && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 text-verde"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                  </svg>
+                )}
+                {feature.icon === 'shield' && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 text-verde"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+                )}
+                {feature.icon === 'check' && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 text-verde"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                )}
+                {feature.icon === 'clock' && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 text-verde"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                )}
+              </div>
+              <p class="text-[13px] leading-relaxed text-tinta/75">{feature.title}</p>
+            </div>
+          ))
+        }
       </div>
 
-      <!-- Línea decorativa vertical editorial -->
-      <div class="pointer-events-none absolute -right-2 top-1/2 hidden -translate-y-1/2 lg:block" aria-hidden="true">
-        <div class="flex flex-col items-center gap-3">
-          <span class="h-12 w-[1px] bg-salvia/25"></span>
-          <svg viewBox="0 0 16 16" class="h-2 w-2 text-salvia/30" fill="currentColor">
-            <circle cx="8" cy="8" r="2" />
-          </svg>
-          <span class="h-12 w-[1px] bg-salvia/25"></span>
-        </div>
+      <!-- Pie de sección -->
+      <div class="mt-10 flex items-center gap-3">
+        <div class="h-px w-8 bg-salvia/40"></div>
+        <p class="font-mono text-[10px] font-medium uppercase tracking-[0.3em] text-salvia/70">
+          Plantas · Ciencia · Personas · Salud real
+        </p>
       </div>
     </div>
   </div>
